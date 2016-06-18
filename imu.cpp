@@ -59,6 +59,28 @@ void IMU::calibrateGyroscope() {
   offset[1] /= 2000;
   offset[2] /= 2000;
 }
+void IMU::calibrateAcclerometer() {
+
+  // Calibrate the gyroscope
+  for (int cal_int = 0; cal_int < 2000 ; cal_int ++) {
+    start ++;
+    long ax, ay, az;
+    int64_t gx, gy, gz;
+    getRaw(&ax, &ay, &az, &gx, &gy, &gz);
+    offset[3] += ax;
+    offset[4] += ay;
+    offset[5] += az;
+
+    delay(3);
+    if (start == 10) {
+      digitalWrite(13, !digitalRead(13));
+      start = 0;
+    }
+  }
+  offset[3] /= 2000;
+  offset[4] /= 2000;
+  offset[5] /= 2000;
+}
 
 void IMU::getRaw(long* ax, long* ay, long* az, int64_t* gx, int64_t* gy, int64_t* gz) {
 
@@ -102,9 +124,9 @@ void IMU::getAcclerometer(long* acc_x, long* acc_y, long* acc_z) {
   int64_t gx, gy, gz;
   getRaw(&ax, &ay, &az, &gx, &gy, &gz);
 
-  *acc_x = ax;
-  *acc_y = ay;
-  *acc_z = az;
+  *acc_x = ax - offset[3];
+  *acc_y = ay - offset[4];
+  *acc_z = az - offset[5];
 
 
 }
