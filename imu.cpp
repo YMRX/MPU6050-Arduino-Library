@@ -8,7 +8,7 @@
 #include "imu.h"
 #include "Wire.h"
 
-double offset[3];
+double offset[5];
 int start = 0;
 
 IMU::IMU() {
@@ -72,7 +72,7 @@ void IMU::calibrateAcclerometer() {
     offset[5] += az;
 
     delay(3);
-    if (start == 10) {
+    if (start == 100) {
       digitalWrite(13, !digitalRead(13));
       start = 0;
     }
