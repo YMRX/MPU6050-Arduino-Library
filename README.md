@@ -5,15 +5,14 @@ I am not responsable for any damage! You can use this library in your projects w
 Happy coding !!
 YMRX
 
-WIRING:
+#WIRING:
 VCC  -  5V
 GND  -  GND
 SDA  -  A4
 SCL  -  A5
-
 LED - 13
 
-USAGE:
+#USAGE:
 
 firstly you have to include the include the Wire.h Library:
     #include "Wire.h"
