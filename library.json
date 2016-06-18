@@ -1,0 +1,18 @@
+{
+  "name": "Simple-MPU6050-Arduino-Library",
+  "keywords": "gyroscope, accelerometer, sensor, i2c",
+  "description": "This is a simple Library made for the MPU6050 Gyroscope and Acclerometer Sensor",
+  "include": "Arduino/MPU6050",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/YMRX/Simple-MPU6050-Arduino-Library"
+  },
+  "dependencies":
+  {
+    "name": "Simple-MPU6050-Arduino-Library",
+    "frameworks": "arduino"
+  },
+  "frameworks": "arduino",
+  "platforms": "atmelavr"
+}
