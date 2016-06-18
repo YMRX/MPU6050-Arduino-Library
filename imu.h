@@ -17,10 +17,9 @@ class IMU
     IMU();
     void setup_register();
     void calibrateGyroscope();
-    void getRaw(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz);
-    void getGyroscope(int16_t* gyro_x, int16_t* gyro_y, int16_t* gyro_z);
-    void getAcclerometer(int16_t* acc_x, int16_t* acc_y, int16_t* acc_z);
-    void get6Motion(int16_t* gyro_x, int16_t* gyro_y, int16_t* gyro_z, int16_t* acc_x, int16_t* acc_y, int16_t* acc_z);
+    void getRaw(long* ax, long* ay, long* az, int64_t* gx, int64_t* gy, int64_t* gz);
+    void getGyroscope(int64_t* gyro_x, int64_t* gyro_y, int64_t* gyro_z);
+    void getAcclerometer(long* acc_x, long* acc_y, long* acc_z);
     
   private:
     
