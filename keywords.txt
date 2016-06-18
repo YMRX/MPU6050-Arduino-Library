@@ -1,0 +1,5 @@
+IMU KEYWORD1
+setup_register KEYWORD2
+calibrateGyroscope KEYWORD3
+getGyroscope KEYWORD4
+getAcclerometer KEYWORD5
