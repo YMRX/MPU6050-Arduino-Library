@@ -5,7 +5,7 @@ I am not responsable for any damage! You can use this library in your projects w
 Happy coding !!
 YMRX
 
-#WIRING:
+##WIRING:
 Wiring the sensor is pretty easy:
     
     VCC  -  5V
@@ -16,11 +16,12 @@ Wiring the sensor is pretty easy:
 Connect the LED to pin 13
 
 
-#USAGE:
+##USAGE:
 
 firstly you have to include the include the Wire.h Library:
     
-    #include "Wire.h"
+    #include <imu.h>
+    #include <Wire.h>
 
 the you need to create an objekt:
     
