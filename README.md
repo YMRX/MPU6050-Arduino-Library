@@ -6,11 +6,15 @@ Happy coding !!
 YMRX
 
 #WIRING:
-VCC  -  5V
-GND  -  GND
-SDA  -  A4
-SCL  -  A5
-LED - 13
+Wiring the sensor is pretty easy:
+    
+    VCC  -  5V
+    GND  -  GND
+    SDA  -  A4
+    SCL  -  A5
+
+Connect the LED to pin 13
+
 
 #USAGE:
 
@@ -31,5 +35,4 @@ to setup the Sensor use this funktions:
 you can get Sensor readings by using this:
     
     int16_t gyro_x, gyro_y, gyro_z;
-    
     senor.getGyroscope(&gyro_x, &gyro_y, &gyro_z);
