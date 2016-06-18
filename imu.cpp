@@ -42,8 +42,8 @@ void IMU::calibrateGyroscope() {
   // Calibrate the gyroscope
   for (int cal_int = 0; cal_int < 2000 ; cal_int ++) {
     start ++;
-    int16_t ax, ay, az;
-    int16_t gx, gy, gz;
+    long ax, ay, az;
+    int64_t gx, gy, gz;
     getRaw(&ax, &ay, &az, &gx, &gy, &gz);
     offset[0] += gx;
     offset[1] += gy;
@@ -60,7 +60,7 @@ void IMU::calibrateGyroscope() {
   offset[2] /= 2000;
 }
 
-void IMU::getRaw(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz) {
+void IMU::getRaw(long* ax, long* ay, long* az, int64_t* gx, int64_t* gy, int64_t* gz) {
 
   Wire.beginTransmission(0x68);
   Wire.write(0x3B);
@@ -83,10 +83,10 @@ void IMU::getRaw(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy
   *gz = (int16_t) (Wire.read() << 8 | Wire.read());
 }
 
-void IMU::getGyroscope(int16_t* gyro_x, int16_t* gyro_y, int16_t* gyro_z) {
+void IMU::getGyroscope(int64_t* gyro_x, int64_t* gyro_y, int64_t* gyro_z) {
 
-  int16_t ax, ay, az;
-  int16_t gx, gy, gz;
+  long ax, ay, az;
+  int64_t gx, gy, gz;
   getRaw(&ax, &ay, &az, &gx, &gy, &gz);
 
   *gyro_x = gx - offset[0];
@@ -96,10 +96,10 @@ void IMU::getGyroscope(int16_t* gyro_x, int16_t* gyro_y, int16_t* gyro_z) {
 
 }
 
-void IMU::getAcclerometer(int16_t* acc_x, int16_t* acc_y, int16_t* acc_z) {
+void IMU::getAcclerometer(long* acc_x, long* acc_y, long* acc_z) {
 
-  int16_t ax, ay, az;
-  int16_t gx, gy, gz;
+  long ax, ay, az;
+  int64_t gx, gy, gz;
   getRaw(&ax, &ay, &az, &gx, &gy, &gz);
 
   *acc_x = ax;
@@ -108,25 +108,4 @@ void IMU::getAcclerometer(int16_t* acc_x, int16_t* acc_y, int16_t* acc_z) {
 
 
 }
-
-void IMU::get6Motion(int16_t* gyro_x, int16_t* gyro_y, int16_t* gyro_z, int16_t* acc_x, int16_t* acc_y, int16_t* acc_z) {
-
-  int16_t ax, ay, az;
-  int16_t gx, gy, gz;
-  getRaw(&ax, &ay, &az, &gx, &gy, &gz);
-
-  *gyro_x = gx - offset[0];
-  *gyro_y = gy - offset[1];
-  *gyro_z = gz - offset[2];
-
-  
-  *acc_x = ax;
-  *acc_y = ay;
-  *acc_z = az;
-
-}
-
-
-
-
 
