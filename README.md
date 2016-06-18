@@ -4,3 +4,28 @@ I am not responsable for any damage! You can use this library in your projects w
 
 Happy coding !!
 YMRX
+
+WIRING:
+VCC  -  5V
+GND  -  GND
+SDA  -  A4
+SCL  -  A5
+
+LED - 13
+
+USAGE:
+
+firstly you have to include the include the Wire.h Library:
+    #include "Wire.h"
+
+the you need to create an objekt:
+    IMU sensor;
+
+to setup the Sensor use this funktions:
+    sensor.setup_register();
+    delay(3000);                    // give the sensor time to start
+    sensor.calibrateGyroscope();
+
+you can get Sensor readings by using this:
+    int16_t gyro_x, gyro_y, gyro_z;
+    senor.getGyroscope(&gyro_x, &gyro_y, &gyro_z);
