@@ -6,7 +6,7 @@ Happy coding !!
 YMRX
 
 #WIRING:
-VCC  -  5V\n
+VCC  -  5V
 GND  -  GND
 SDA  -  A4
 SCL  -  A5
