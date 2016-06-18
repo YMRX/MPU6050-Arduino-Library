@@ -6,7 +6,6 @@
 
 #include "Arduino.h"
 #include "imu.h"
-#include <Wire.h>
 
 double offset[3];
 int start = 0;
@@ -17,7 +16,6 @@ IMU::IMU() {
 
 
 void IMU::setup_register() {
-  Wire.begin();
 
   Wire.beginTransmission(0x68);
   Wire.write(0x6B);
