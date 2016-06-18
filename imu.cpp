@@ -8,7 +8,7 @@
 #include "imu.h"
 #include "Wire.h"
 
-double offset[5];
+double offset[6];
 int start = 0;
 
 IMU::IMU() {
@@ -60,7 +60,7 @@ void IMU::calibrateGyroscope() {
   offset[2] /= 2000;
 }
 void IMU::calibrateAcclerometer() {
-
+  start = 0;
   // Calibrate the gyroscope
   for (int cal_int = 0; cal_int < 2000 ; cal_int ++) {
     start ++;
