@@ -8,7 +8,7 @@
 #define imu_h
 
 #include "Arduino.h"
-#include "Wire.h"
+
 
 class IMU
 {
