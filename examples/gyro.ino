@@ -37,7 +37,7 @@ void setup() {
 
 void loop() {
 
-  imu.getGyroscope(&gyro_x, &gyro_y, &gyro_z);                                    // get calibratet readings
+  imu.getGyroscope(&gyro_x, &gyro_y, &gyro_z);                                    // get sensor readings
   
   // scale the sensor data to degrees per second
   gyro_x_output = (gyro_x_output * 0.8) + ((gyro_x / 65.5) * 0.2);                
