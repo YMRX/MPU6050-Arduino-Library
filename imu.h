@@ -1,6 +1,6 @@
 /*
   imu.h --> MPU6050 Libary
-  @author: c4p7a1n_r007
+  @author: YMRX
   @version: 1.0
 */
 
