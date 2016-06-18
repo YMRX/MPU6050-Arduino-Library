@@ -26,7 +26,7 @@ the you need to create an objekt:
     
     IMU sensor;
 
-to setup the Sensor use this funktions:
+to setup the Sensor use this functions:
     
     sensor.setup_register();
     delay(3000);                    // give the sensor time to start
