@@ -4,7 +4,7 @@
   @version: 1.0
 */
 
-#include "imu.h"
+#include <imu.h>
 #include <Wire.h>
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -23,7 +23,6 @@ long loop_timer;
 
 void setup() {
 
-  Wire.begin();                                             // Activate i2c bus
   Serial.begin(9600);                                       // Activate Serial connection for debugging
   
   imu.setup_register();                                     // start sensor and setup register
